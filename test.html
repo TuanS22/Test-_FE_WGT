@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test</title>
+    <style>
+        .clock {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+
+        .time span {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .units span {
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="time">
+            <span class="hours"></span>
+            <span class="minutes"></span>
+            <span class="seconds"></span>
+        </div>
+        <div class="units">
+            <span>giờ</span>
+            <span>phút</span>
+            <span>giây</span>
+        </div>
+    </div>
+
+    <script>
+        function digitalClock() {
+            // Lấy ngày giờ hiện tại theo múi giờ Việt Nam (UTC+7)
+            const now = new Date();
+            //now.setTime(now.getTime() + 24 * 3600 * 1000); // Chỉnh múi giờ
+
+            // Lấy các thành phần ngày giờ
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Cập nhật nội dung các span trong HTML
+            document.querySelector('.hours').textContent = hours.toString().padStart(2, '0');
+            document.querySelector('.minutes').textContent = minutes.toString().padStart(2, '0');
+            document.querySelector('.seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Cập nhật đồng hồ mỗi giây
+        setInterval(digitalClock, 1000);
+    </script>
+</body>
+
+</html>
