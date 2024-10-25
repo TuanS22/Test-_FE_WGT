@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    background-image: url(./Imgae/DSC00336.webp);
+    width: auto;
+    height: 1098px;
+    padding-top: 16px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    gap: 13px;
+}
+
+.header__time {
+    background-color: #1F1F1F;
+    width: 1376px;
+    margin: auto;
+    border-radius: 8px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+    padding: 4px 12px;
+}
+
+.header__time--left {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    height: auto;
+}
+
+.header__time--left li {
+    height: fit-content;
+}
+
+/* MENU */
+.header__menu {
+    width: 1352px;
+    height: auto;
+    margin: 13px auto 0;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
+
+.header__menu li {
+    list-style: none;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+/* MENU LEFT */
+.header__menu--left {
+    width: 227px;    
+}
+
+.header__menu--left:hover .menu__left--sub {
+    display: block;
+}
+
+/* MENU RIGHT */
+.header__menu--right {
+    width: 227px;
+}
+
+.header__menu--right ul {
+    height: 19px;
+    gap: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Menu con */
+.menu__left--sub {
+    display: none;
+}
+
+.menu__left--sub li {
+    width: 100px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+.menu__left--sub li:hover {
+    color: #1F1F1F;
+}
+
+/* HEADER TITLE */
+.heade__title {
+    width: 822px;
+    height: 148px;
+    margin: 205px auto 0;
+    font-size: 64px;
+    line-height: 74px;
+    color: #FFFFFF;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Lora', sans-serif;
+} 
