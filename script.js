@@ -21,6 +21,37 @@ function digitalClock() {
 setInterval(digitalClock, 1000);
 
 
+/* MAIN 5 SLIDER */
+const listMain5 = document.querySelector(".content--five--bottom");
+const itemMain5 = document.querySelector(".six__item");
+const itemWidth5 = item.offsetWidth * 2.5;
+
+// Đo lường tổng chiều rộng của tất cả các mục trong danh sách
+const totalWidth5 = listMain5.scrollWidth;
+const visibleWidth5 = listMain5.offsetWidth;
+
+function handleClick(direction) {
+    const currentScrollPosition = listMain5.scrollLeft;
+
+    if (direction === "previous") {
+        // Kiểm tra nếu scroll đến vị trí đầu tiên, cuộn đến cuối danh sách
+        if (currentScrollPosition === 0) {
+            listMain5.scrollTo({ left: totalWidth5, behavior: "smooth" });
+        } else {
+            listMain5.scrollBy({ left: -itemWidth5, behavior: "smooth" });
+        }
+    } else {
+        // Kiểm tra nếu scroll đến vị trí cuối cùng, cuộn về đầu danh sách
+        if (currentScrollPosition + visibleWidth5 >= totalWidth5) {
+            listMain5.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+            listMain5.scrollBy({ left: itemWidth5, behavior: "smooth" });
+        }
+    }
+}
+
+
+
 /* MAIN 6 SLIDER */
 const list = document.querySelector(".six__list");
 const item = document.querySelector(".six__item");

@@ -16,7 +16,8 @@
   <header>
     <div class="header">
       <div class="header__time">
-        <div class="header__time--left">FREE SHIPPING · COUPON: FREE. Exchanges and returns within 30 days.</div>
+        <div class="header__time--left">FREE SHIPPING · COUPON: FREE. <span class="header__title--span">Exchanges and
+            returns within 30 days.</span></div>
         <div class=header__time--right>
           <div class="header__clock">
             <div class="header__clock--time">
@@ -58,8 +59,8 @@
           </li>
           <li class="header__menu--right">
             <ul>
-              <li><i class="fa-solid fa-magnifying-glass"></i> SEARCH</li>
-              <li>LOGIN</li>
+              <li class="header__menu--search"><i class="fa-solid fa-magnifying-glass"></i> SEARCH</li>
+              <li class="header__menu--login">LOGIN</li>
               <li>BAG</li>
               <li>(0)</li>
             </ul>
@@ -100,8 +101,8 @@
       </div>
     </div>
     <div class="main__content--two">
-      <div class="dfex g-8">
-        <div class="main__content-two--item">
+      <div class="dfex g-8 content--two">
+        <div class="main__content-two--item main__two--order">
           <img src="./Image/content-two-1.webp" />
         </div>
         <div class="main__content-two--item main__item--description">
@@ -125,8 +126,8 @@
           </div>
         </div>
       </div>
-      <div class="dfex g-8 mt-8">
-        <div class="main__content-two--item main__item--description">
+      <div class="dfex g-8 mt-8 content--two">
+        <div class="main__content-two--item main__item--description main__item--description--bottom">
           <div class="main__two-description--item">
             <h1 class="" style="margin-top: 372px;">Mollit aliquip do ipsum consectetur</h1>
             <p class="mt-40">Ex laborum ea qui consectetur mollit commodo eiusmod culpa dolor cupidatat. Ullamco dolore
@@ -188,10 +189,17 @@
           </div>
           <div class="grid-item--bottom">
             <div>Lorem ullamco</div>
-            <div>17,99€</div>
+            <div>
+              17,99€
+              <span class="grid-item--old" style="display: none;">25,99€</span>
+              <span class="grid-item--sale" style="display: none;">-15%</span>
+            </div>
           </div>
           <div class="four__gird--button">
             <button type="submit">AÑADIR A LA CESTA</button>
+          </div>
+          <div class="four__gird--plus" style="display: none;">
+            <button><i class="fa-solid fa-plus"></i></button>
           </div>
         </div>
         <div class="four--grid-item">
@@ -212,10 +220,17 @@
           </div>
           <div class="grid-item--bottom">
             <div>Lorem ullamco</div>
-            <div>17,99€</div>
+            <div>
+              17,99€
+              <span class="grid-item--old" style="display: none;">25,99€</span>
+              <span class="grid-item--sale" style="display: none;">-15%</span>
+            </div>
           </div>
           <div class="four__gird--button">
             <button type="submit">AÑADIR A LA CESTA</button>
+          </div>
+          <div class="four__gird--plus" style="display: none;">
+            <button><i class="fa-solid fa-plus"></i></button>
           </div>
         </div>
         <div class="four--grid-item mt-12">
@@ -236,10 +251,17 @@
           </div>
           <div class="grid-item--bottom">
             <div>Lorem ullamco</div>
-            <div>17,99€</div>
+            <div>
+              17,99€
+              <span class="grid-item--old" style="display: none;">25,99€</span>
+              <span class="grid-item--sale" style="display: none;">-15%</span>
+            </div>
           </div>
           <div class="four__gird--button">
             <button type="submit">AÑADIR A LA CESTA</button>
+          </div>
+          <div class="four__gird--plus" style="display: none;">
+            <button><i class="fa-solid fa-plus"></i></button>
           </div>
         </div>
         <div class="four--grid-item mt-12">
@@ -265,11 +287,14 @@
           <div class="four__gird--button">
             <button type="submit">AÑADIR A LA CESTA</button>
           </div>
+          <div class="four__gird--plus" style="display: none;">
+            <button><i class="fa-solid fa-plus"></i></button>
+          </div>
         </div>
       </div>
     </div>
     <div class="main__content--five mt-80">
-      <div class="dfex" style="justify-content: space-between;">
+      <div class="dfex content--five" style="justify-content: space-between;">
         <div class="content--five--title">
           <h2>Ipsum minim mollit irure</h2>
           <p>Lorem ipsum dolor sit amet consectetur. Est congue ultrices sem id aliquam et diam ultricies rhoncus. Purus
@@ -280,40 +305,59 @@
         </div>
       </div>
       <div class="content--five--bottom">
-        <div class="five--bottom--item">
-          <div class="five--bottom--item--img">
-            <img class="mt-60" src="./Image/Frame 428.png" />
-          </div>
-          <div class="five--bottom--item--description">
-            <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
-              adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
-          </div>
-        </div>
-        <div class="five--bottom--item">
-          <div class="five--bottom--item--img">
-            <img class="mt-60" src="./Image/Frame 428.png" />
-          </div>
-          <div class="five--bottom--item--description">
-            <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
-              adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+        <div class="content--five--bottom--item">
+          <div class="five--bottom--item">
+            <div class="five--bottom--item--img">
+              <img class="mt-60" src="./Image/Frame 428.png" />
+            </div>
+            <div class="five--bottom--item--description">
+              <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
+                adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+            </div>
           </div>
         </div>
-        <div class="five--bottom--item">
-          <div class="five--bottom--item--img">
-            <img class="mt-60" src="./Image/Frame 428.png" />
-          </div>
-          <div class="five--bottom--item--description">
-            <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
-              adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+        <div class="content--five--bottom--item">
+          <div class="five--bottom--item">
+            <div class="five--bottom--item--img">
+              <img class="mt-60" src="./Image/Frame 428.png" />
+            </div>
+            <div class="five--bottom--item--description">
+              <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
+                adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+            </div>
           </div>
         </div>
-        <div class="five--bottom--item">
-          <div class="five--bottom--item--img">
-            <img class="mt-60" src="./Image/Frame 428.png" />
+        <div class="content--five--bottom--item">
+          <div class="five--bottom--item">
+            <div class="five--bottom--item--img">
+              <img class="mt-60" src="./Image/Frame 428.png" />
+            </div>
+            <div class="five--bottom--item--description">
+              <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
+                adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+            </div>
           </div>
-          <div class="five--bottom--item--description">
-            <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
-              adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+        </div>
+        <div class="content--five--bottom--item">
+          <div class="five--bottom--item">
+            <div class="five--bottom--item--img">
+              <img class="mt-60" src="./Image/Frame 428.png" />
+            </div>
+            <div class="five--bottom--item--description">
+              <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
+                adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="content--five--bottom--item">
+          <div class="five--bottom--item">
+            <div class="five--bottom--item--img">
+              <img class="mt-60" src="./Image/Frame 428.png" />
+            </div>
+            <div class="five--bottom--item--description">
+              <p>Veniam exercitation reprehenderit proident cillum consequat est irure duis. Esse est qui mollit
+                adipisicing dolore ut qui reprehenderit nulla dolore consectetur velit.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -431,8 +475,10 @@
           </li>
         </ul>
         <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
-        <button onclick="handleClick('previous')" class="six__button six__button--previous" type="button"><i class="fa-solid fa-angle-left"></i></button>
-        <button onclick="handleClick('next')" class="six__button six__button--next" type="button"><i class="fa-solid fa-angle-right"></i></button>
+        <button onclick="handleClick('previous')" class="six__button six__button--previous" type="button"><i
+            class="fa-solid fa-angle-left"></i></button>
+        <button onclick="handleClick('next')" class="six__button six__button--next" type="button"><i
+            class="fa-solid fa-angle-right"></i></button>
       </div>
     </div>
   </main>
