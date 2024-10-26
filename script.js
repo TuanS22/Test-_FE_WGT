@@ -24,7 +24,6 @@ setInterval(digitalClock, 1000);
 /* MAIN 5 SLIDER */
 const listMain5 = document.querySelector(".content--five--bottom");
 const itemMain5 = document.querySelector(".six__item");
-const itemWidth5 = item.offsetWidth * 2.5;
 
 // Đo lường tổng chiều rộng của tất cả các mục trong danh sách
 const totalWidth5 = listMain5.scrollWidth;
