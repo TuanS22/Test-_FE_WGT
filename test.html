@@ -2,60 +2,140 @@
 <html>
 
 <head>
-    <title>Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider in HTML CSS and JavaScript | CodingNepal</title>
+    <!-- Google Fonts Link For Icons -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- https://xstore.8theme.com/demos/hosting/-->
+
     <style>
-        .clock {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
+        .six__list {
+            display: flex;
+            gap: 9px;
+            padding: 0;
+            height: 800px;
+            list-style: none;
+            overflow-x: scroll;
         }
 
-        .time span {
-            display: inline-block;
-            padding: 10px;
+        .six__item {
+            flex-shrink: 0;
+            width: 453px;
+            height: 800px;
+            background-color: #FFF;
+            scroll-snap-align: center;
         }
 
-        .units span {
-            display: inline-block;
-            font-size: 16px;
+        .six__content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-family: sans-serif;
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        .six__content img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .six__list-wrapper {
+            position: relative;
+            width: 100%;
+            height: 800px;
+        }
+
+        .six__button {
+            position: absolute;
+            top: 50%;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .six__button--previous {
+            width: 42px;
+            height: 46px;
+            left: 0;
+            border-radius: 0 8px 8px 0;
+            border: 0;
+        }
+
+        .six__button--next {
+            right: 0;
+            border: 0;
+            border-radius: 8px 0px 0 8px;
+            width: 42px;
+            height: 46px;
+        }
+
+        body {
+            margin: 0;
         }
     </style>
 </head>
 
 <body>
-    <div class="clock">
-        <div class="time">
-            <span class="hours"></span>
-            <span class="minutes"></span>
-            <span class="seconds"></span>
-        </div>
-        <div class="units">
-            <span>giờ</span>
-            <span>phút</span>
-            <span>giây</span>
-        </div>
+    <div class="six__list-wrapper">
+        <ul class="six__list">
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/DSC00336_11zon.webp" /></div>
+            </li>
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/DSC00465_11zon.webp" /></div>
+            </li>
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/image 480_11zon.webp" /></div>
+            </li>
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/DSC09826_11zon.webp" /></div>
+            </li>
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/DSC00336_11zon.webp" /></div>
+            </li>
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/DSC00465_11zon.webp" /></div>
+            </li>
+            <li class="six__item">
+                <div class="six__content"><img src="./Image/image 480_11zon.webp" /></div>
+            </li>
+        </ul>
+        <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+        <button onclick="handleClick('previous')" class="six__button six__button--previous" type="button">></button>
+        <button onclick="handleClick('next')" class="six__button six__button--next" type="button">></button>
     </div>
-
     <script>
-        function digitalClock() {
-            // Lấy ngày giờ hiện tại theo múi giờ Việt Nam (UTC+7)
-            const now = new Date();
-            //now.setTime(now.getTime() + 24 * 3600 * 1000); // Chỉnh múi giờ
+        const list = document.querySelector(".six__list");
+        const item = document.querySelector(".six__item");
+        const itemWidth = item.offsetWidth + 680;
 
-            // Lấy các thành phần ngày giờ
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
+        // Đo lường tổng chiều rộng của tất cả các mục trong danh sách
+        const totalWidth = list.scrollWidth;
+        const visibleWidth = list.offsetWidth;
 
-            // Cập nhật nội dung các span trong HTML
-            document.querySelector('.hours').textContent = hours.toString().padStart(2, '0');
-            document.querySelector('.minutes').textContent = minutes.toString().padStart(2, '0');
-            document.querySelector('.seconds').textContent = seconds.toString().padStart(2, '0');
+        function handleClick(direction) {
+            const currentScrollPosition = list.scrollLeft;
+
+            if (direction === "previous") {
+                // Kiểm tra nếu scroll đến vị trí đầu tiên, cuộn đến cuối danh sách
+                if (currentScrollPosition === 0) {
+                    list.scrollTo({ left: totalWidth, behavior: "smooth" });
+                } else {
+                    list.scrollBy({ left: -itemWidth, behavior: "smooth" });
+                }
+            } else {
+                // Kiểm tra nếu scroll đến vị trí cuối cùng, cuộn về đầu danh sách
+                if (currentScrollPosition + visibleWidth >= totalWidth) {
+                    list.scrollTo({ left: 0, behavior: "smooth" });
+                } else {
+                    list.scrollBy({ left: itemWidth, behavior: "smooth" });
+                }
+            }
         }
-
-        // Cập nhật đồng hồ mỗi giây
-        setInterval(digitalClock, 1000);
     </script>
+
 </body>
 
 </html>

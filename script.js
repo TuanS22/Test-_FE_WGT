@@ -1,3 +1,4 @@
+/* HEADER TIME */
 function digitalClock() {
     // Lấy ngày giờ hiện tại theo múi giờ Việt Nam (UTC+7)
     const now = new Date();
@@ -18,3 +19,33 @@ function digitalClock() {
 
 // Cập nhật đồng hồ mỗi giây
 setInterval(digitalClock, 1000);
+
+
+/* MAIN 6 SLIDER */
+const list = document.querySelector(".six__list");
+const item = document.querySelector(".six__item");
+const itemWidth = item.offsetWidth * 2.5;
+
+// Đo lường tổng chiều rộng của tất cả các mục trong danh sách
+const totalWidth = list.scrollWidth;
+const visibleWidth = list.offsetWidth;
+
+function handleClick(direction) {
+    const currentScrollPosition = list.scrollLeft;
+
+    if (direction === "previous") {
+        // Kiểm tra nếu scroll đến vị trí đầu tiên, cuộn đến cuối danh sách
+        if (currentScrollPosition === 0) {
+            list.scrollTo({ left: totalWidth, behavior: "smooth" });
+        } else {
+            list.scrollBy({ left: -itemWidth, behavior: "smooth" });
+        }
+    } else {
+        // Kiểm tra nếu scroll đến vị trí cuối cùng, cuộn về đầu danh sách
+        if (currentScrollPosition + visibleWidth >= totalWidth) {
+            list.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+            list.scrollBy({ left: itemWidth, behavior: "smooth" });
+        }
+    }
+}
